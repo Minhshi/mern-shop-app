@@ -7,7 +7,7 @@
     "yarn": "1.13.0"
   },
    "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "repository": "git@github.com:Minhshi/mern-shop-app.git",
   "author": "Minh Pham <mpham@naver.com>",

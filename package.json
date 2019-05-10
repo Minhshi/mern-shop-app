@@ -6,6 +6,9 @@
     "node": "8.1.1",
     "yarn": "1.13.0"
   },
+   "scripts": {
+    "start": "node index.js"
+  },
   "repository": "git@github.com:Minhshi/mern-shop-app.git",
   "author": "Minh Pham <mpham@naver.com>",
   "license": "MIT",

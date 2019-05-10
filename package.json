@@ -2,6 +2,10 @@
   "name": "mern-shop-app",
   "version": "1.0.0",
   "main": "index.js",
+  "enginges": {
+    "node": "8.1.1",
+    "yarn": "1.13.0"
+  },
   "repository": "git@github.com:Minhshi/mern-shop-app.git",
   "author": "Minh Pham <mpham@naver.com>",
   "license": "MIT",

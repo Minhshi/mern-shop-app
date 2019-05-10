@@ -14,4 +14,9 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
+const connection = mongoose.connection;
+connection.once("open", () => {
+  console.log("MongoDB connection established");
+});
+
 app.listen(PORT, () => console.log(`App is running on port: ${PORT}`));

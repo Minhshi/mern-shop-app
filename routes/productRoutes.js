@@ -1,8 +1,18 @@
 const productSchema = require("../models/Product");
 
 module.exports = products => {
+  // products.get("/", (req, res) => {
+  //   res.send("Hello World");
+  // });
+
   products.get("/", (req, res) => {
-    res.send("Hello World");
+    productSchema.find((err, products) => {
+      if (products) {
+        res.status(302).json(products);
+      } else {
+        res.status(404).send(err);
+      }
+    });
   });
 
   products.post("/new", (req, res) => {

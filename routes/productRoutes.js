@@ -27,15 +27,22 @@ module.exports = products => {
 
   products.post("/new", (req, res) => {
     // console.log(req.body)
-    const product = new productSchema(req.body);
-    product
-      .save()
-      .then(product => {
+    // const product = new productSchema(req.body);
+    // product
+    //   .save()
+    //   .then(product => {
+    //     res.status(200).json(product);
+    //   })
+    //   .catch(err => {
+    //     res.status(400).send(err);
+    //   });
+    productSchema.create(req.body, (err, product) => {
+      if (product) {
         res.status(200).json(product);
-      })
-      .catch(err => {
+      } else {
         res.status(400).send(err);
-      });
+      }
+    });
   });
 
   products.patch("/edit/:id", (req, res) => {

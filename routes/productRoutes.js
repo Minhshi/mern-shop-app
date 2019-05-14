@@ -15,6 +15,16 @@ module.exports = products => {
     });
   });
 
+  products.get("/:id", (req, res) => {
+    productSchema.findById(req.params.id, (err, product) => {
+      if (product) {
+        res.status(302).json(product);
+      } else {
+        res.status(404).send(err);
+      }
+    });
+  });
+
   products.post("/new", (req, res) => {
     // console.log(req.body)
     const product = new productSchema(req.body);

@@ -37,4 +37,14 @@ module.exports = products => {
         res.status(400).send("Product could not be added");
       });
   });
+
+  products.patch("/edit/:id", (req, res) => {
+    productSchema.findOneAndUpdate(req.params.id, req.body, (err, product) => {
+      if (product) {
+        res.status(202).json(product);
+      } else {
+        res.status(400).send("Product could not be added");
+      }
+    });
+  });
 };
